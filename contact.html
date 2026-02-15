@@ -60,6 +60,136 @@
     .main-footer {
       background-color: rgb(73, 72, 72);
     }
+    #ai-fab {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #198754, #0d6efd);
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      cursor: pointer;
+      z-index: 10000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #ai-fab:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(0,0,0,0.35); }
+
+    #ai-panel {
+      position: fixed;
+      bottom: 160px;
+      right: 20px;
+      width: 320px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: inherit;
+      border: 1px solid #e0e0e0;
+    }
+    #ai-panel.open { display: flex; }
+
+    #ai-panel-header {
+      background: linear-gradient(135deg, #198754, #0d6efd);
+      color: #fff;
+      padding: 14px 16px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #ai-panel-header span { font-weight: 600; font-size: 15px; }
+    #ai-panel-header small { font-size: 11px; opacity: 0.85; display: block; margin-top: 2px; }
+    #ai-close-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+
+    #ai-panel-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+
+    #ai-prompt-input {
+      width: 100%;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 13.5px;
+      resize: none;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    #ai-prompt-input:focus { border-color: #198754; }
+
+    #ai-generate-btn {
+      background: linear-gradient(135deg, #198754, #0d6efd);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 9px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: opacity 0.2s;
+    }
+    #ai-generate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    #ai-status {
+      font-size: 12px;
+      color: #6c757d;
+      min-height: 16px;
+      text-align: center;
+    }
+    #ai-status.success { color: #198754; font-weight: 600; }
+    #ai-status.error   { color: #dc3545; }
+
+    .ai-dest-btn {
+      flex: 1;
+      padding: 8px 6px;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      background: #f8f9fa;
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.18s ease;
+      line-height: 1.6;
+    }
+    .ai-dest-btn i { font-size: 16px; display: block; margin-bottom: 3px; }
+    .ai-dest-btn:hover { border-color: #198754; color: #198754; background: #f0fff4; }
+    .ai-dest-btn.active {
+      border-color: #198754;
+      background: linear-gradient(135deg, #d1fae5, #dbeafe);
+      color: #198754;
+    }
+
+    .ai-spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
@@ -117,18 +247,18 @@
       </div>
     </div>
   </div>
-  <section class="py-5 text-center reveal">
+  <section id="contact" class="py-5 text-center">
     <div class="container">
       <h1>Contact Me</h1>
       <h3>Want to make something new? Contact me here.</h3>
       <p class="text-danger">Only contact to make websites.</p>
       <h6 class="fw-bold mt-3">Email Me (Phones):</h6>
-      <a href="mailto:atharvsin03@gmail.com" class="text-decoration-none reveal" style="color: rgb(17, 68, 221)">
-        atharvsin03@gmail.com
+      <a href="/cdn-cgi/l/email-protection#4627322e273430352f28767506212b272f2a6825292b" class="text-decoration-none reveal" style="color: rgb(17, 68, 221)">
+        <span class="__cf_email__" data-cfemail="a0c1d4c8c1d2d6d3c9ce9093e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span>
       </a>
       <h6 class="fw-bold mt-3">Email Me (Computer):</h6>
       <a href="https://mail.google.com/mail/?view=cm&to=atharvsin03@gmail.com" class="text-decoration-none reveal" style="color: rgb(17, 68, 221)">
-        atharvsin03@gmail.com
+        <span class="__cf_email__" data-cfemail="2c4d58444d5e5a5f45421c1f6c4b414d4540024f4341">[email&#160;protected]</span>
       </a>
     </div>
     <div class="container mt-5 reveal">
@@ -144,7 +274,7 @@
           </div>
           <div class="col-12 reveal">
             <label class="form-label">Message</label>
-            <textarea rows="3" class="form-control" placeholder="Enter Message"></textarea>
+            <textarea id="contact-body" rows="3" class="form-control" placeholder="Enter Message"></textarea>
           </div>
           <div class="col-md-12 reveal">
             <button type="button" class="btn btn-success w-100" onclick="sendEmailBrowser()">Send Email via Gmail Browser (Recommended for computers)</button>
@@ -156,7 +286,7 @@
       </form>
     </div>
   </section>
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function sendEmailBrowser() {
       const name = document.querySelector('input[placeholder="Enter Name"]').value.trim();
       const email = document.querySelector('input[placeholder="Enter Email ID"]').value.trim();
@@ -221,7 +351,7 @@
               <div class="col-lg-6 col-md-12 pt-5 mb-5">
                 <h4 class="text-uppercase text-white mb-4">Get In Touch</h4>
                 <div class="d-flex mb-2">
-                  <p class="mb-0">Email: atharvsin03@gmail.com</p>
+                  <p class="mb-0">Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b1a4b8b1a2a6a3b9bee0e390b7bdb1b9bcfeb3bfbd">[email&#160;protected]</a></p>
                 </div>
                 <div class="d-flex mb-2">
                   <p class="mb-0">Linkedin: https://www.linkedin.com/in/atharv-singh-1179823a9/</p>
@@ -260,29 +390,138 @@
       <p class="mb-0">&copy; 2025 <a href="index.html" class="text-decoration-none text-white">Atharv's Web Services</a>. All rights reserved.</p>
     </footer>
   </section>
-  <button class="back-to-top">&uarr;</button>
+  <!-- AI Email Bot FAB -->
+  <button id="ai-fab" title="AI Email Writer">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <!-- AI Bot Panel -->
+  <div id="ai-panel">
+    <div id="ai-panel-header">
+      <div>
+        <span><i class="fa-solid fa-robot" style="margin-right:6px;"></i>AI Email Writer</span>
+        <small>Describe your email &amp; I'll write it!</small>
+      </div>
+      <button id="ai-close-btn" title="Close">&times;</button>
+    </div>
+    <div id="ai-panel-body">
+      <div id="ai-dest-group">
+        <p style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">Where should I write the email?</p>
+        <div style="display:flex;gap:8px;">
+          <button class="ai-dest-btn active" data-dest="contact">
+            <i class="fa-solid fa-envelope"></i><br>Contact Me
+          </button>
+          <button class="ai-dest-btn" data-dest="order">
+            <i class="fa-solid fa-cart-shopping"></i><br>Order Website
+          </button>
+        </div>
+      </div>
+      <textarea id="ai-prompt-input" rows="3"
+        placeholder="e.g. Write a polite email asking about website pricing for my small bakery..."></textarea>
+      <button id="ai-generate-btn">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Email
+      </button>
+      <div id="ai-status"></div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary back-to-top p-2">&uarr;</button>
   <script>
+    // ── Back-to-top ──
     const btn = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
       btn.classList.toggle('show', window.scrollY > 100);
     });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-  <script>
-    const reveals = document.querySelectorAll(".reveal");
-    const revealOnScroll = () => {
-      const windowHeight = window.innerHeight;
-      reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < windowHeight - 100) {
-          el.classList.add("show");
-        }
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── Reveal on scroll ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── AI Email Bot ──
+    const GEMINI_API_KEY = 'AIzaSyBJ_Hzgp2rPzoJKjL-vmXoNpDq5Rss2qXg';
+    const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+    const fab      = document.getElementById('ai-fab');
+    const panel    = document.getElementById('ai-panel');
+    const closeBtn = document.getElementById('ai-close-btn');
+    const genBtn   = document.getElementById('ai-generate-btn');
+    const promptEl = document.getElementById('ai-prompt-input');
+    const statusEl = document.getElementById('ai-status');
+    const destBtns = document.querySelectorAll('.ai-dest-btn');
+
+    let selectedDest = 'contact';
+
+    fab.addEventListener('click', () => panel.classList.toggle('open'));
+    closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+
+    destBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        destBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedDest = btn.dataset.dest;
       });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
+    });
+
+    genBtn.addEventListener('click', async () => {
+      const prompt = promptEl.value.trim();
+      if (!prompt) {
+        statusEl.textContent = 'Please describe the email you want.';
+        statusEl.className = 'error';
+        return;
+      }
+
+      genBtn.disabled = true;
+      genBtn.innerHTML = '<span class="ai-spinner"></span> Writing…';
+      statusEl.textContent = 'Generating your email…';
+      statusEl.className = '';
+
+      try {
+        const systemPrompt = `You are an expert email writer helping someone contact Atharv's Web Services — a professional web development service.
+Write a clear, professional, and concise email body based on what the user describes.
+Return ONLY the email body text — no subject line, no "Subject:", no preamble, no explanation.
+Start directly with the greeting (e.g., "Dear Atharv,") and end with a sign-off. Keep it natural and human-sounding.`;
+
+        const response = await fetch(GEMINI_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: systemPrompt }] },
+            contents: [{ role: 'user', parts: [{ text: prompt }] }]
+          })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error?.message || 'API error');
+
+        const emailText = data.candidates[0].content.parts[0].text;
+
+        if (selectedDest === 'order') {
+          const orderModal = document.getElementById('bookModal');
+          const orderTextarea = orderModal.querySelector('textarea');
+          if (orderTextarea) orderTextarea.value = emailText;
+          new bootstrap.Modal(orderModal).show();
+          statusEl.textContent = '✓ Email written in "Order Website"!';
+        } else {
+          const contactTextarea = document.getElementById('contact-body');
+          if (contactTextarea) contactTextarea.value = emailText;
+          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          statusEl.textContent = '✓ Email written in "Contact Me"!';
+        }
+
+        statusEl.className = 'success';
+        setTimeout(() => panel.classList.remove('open'), 2500);
+
+      } catch (err) {
+        statusEl.textContent = 'Error: ' + err.message;
+        statusEl.className = 'error';
+      } finally {
+        genBtn.disabled = false;
+        genBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Email';
+      }
+    });
   </script>
 </body>
 </html>
